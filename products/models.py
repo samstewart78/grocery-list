@@ -6,15 +6,10 @@ from django.db import models
 class Category(models.Model):
     key = models.SlugField(max_length=50, unique=True, null=False, blank=False)
     name = models.CharField(max_length=200, blank=False)
+    is_food = models.BooleanField(null=False, default=False, verbose_name="Is This Food?")
 
     def __unicode__(self):
         return self.name
-
-    def is_food(self):
-        return self.name in ['Dairy', 'Meat', 'Produce', 'Deli', 'Bakery']
-
-    is_food.short_description = 'Is This Food?'
-    is_food.boolean = True
 
 
 class Product(models.Model):
