@@ -8,7 +8,7 @@ class ProductInline(admin.TabularInline):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    fields = ['name', 'key']
+    fields = ['name', 'key', 'is_food']
     inlines = [ProductInline]
     list_display = ('name', 'key', 'is_food')
     search_fields = ['name', 'key']
