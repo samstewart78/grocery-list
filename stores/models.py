@@ -8,6 +8,9 @@ class Store(models.Model):
     name = models.CharField(max_length=200, blank=False)
     products = models.ManyToManyField('products.Product', through='StoreProducts')
 
+    def __unicode__(self):
+        return self.name
+
 
 class StoreProducts(models.Model):
     store = models.ForeignKey(Store)
