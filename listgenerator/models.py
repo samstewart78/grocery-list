@@ -20,3 +20,4 @@ class ListProducts(models.Model):
     grocerylist = models.ForeignKey(GroceryList)
     product = models.ForeignKey('products.Product')
     quantity = models.PositiveSmallIntegerField(default=1, blank=False)
+    total = models.DecimalField(decimal_places=2, max_digits=5, verbose_name="Final Total", default=0)
